@@ -35,7 +35,7 @@ jobs:
         run: |
           echo "$PRIVATE_KEY" | base64 --decode > swe304.pem
           chmod 600 swe304.pem
-          scp -o StrictHostKeyChecking=no -i C:\Users\aysen\Documents\4.SINIF\4.SINIF-2\DEVOPS\swe304.pem build/libs/*.jar $USER@$HOST:/home/$USER/app.jar
+          scp -o StrictHostKeyChecking=no -i swe304.pem build/libs/*.jar $USER@$HOST:/home/$USER/app.jar
 
       - name: Build Docker image
         run: |
