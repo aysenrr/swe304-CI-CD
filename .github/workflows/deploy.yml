@@ -33,7 +33,7 @@ jobs:
           HOST: ${{ secrets.EC2_HOST }}
           USER: ${{ secrets.EC2_USER }}
         run: |
-          echo "$PRIVATE_KEY" | base64 --decode > swe304.pem
+          echo "$PEM_KEY" | base64 --decode > swe304.pem
           chmod 600 swe304.pem
           scp -o StrictHostKeyChecking=no -i swe304.pem build/libs/*.jar $USER@$HOST:/home/$USER/app.jar
 
